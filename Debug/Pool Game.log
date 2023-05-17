@@ -1,0 +1,9 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Pool Game.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  stdafx.cpp
+  simulation.cpp
+  Curling Game.cpp
+  Generating Code...
+  LINK : C:\Users\Michelle\Documents\AdvProgramming\AdvProgResit\Curling Game\Debug\Curling Game.exe not found or not built by the last incremental link; performing full link
+Curling Game.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  Pool Game.vcxproj -> C:\Users\Michelle\Documents\AdvProgramming\AdvProgResit\Curling Game\Debug\Curling Game.exe
