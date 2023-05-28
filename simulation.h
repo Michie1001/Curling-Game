@@ -2,6 +2,9 @@
   Simulation Header File
   -----------------------------------------------------------*/
 #include"vecmath.h"
+#include <string>
+#include <vector>
+#include <iostream>
 
 /*-----------------------------------------------------------
   Macros
@@ -58,7 +61,10 @@ public:
 	int		index;
 
 	ball(): position(0.0), velocity(0.0), radius(BALL_RADIUS), 
-		mass(BALL_MASS) {index = ballIndexCnt++; Reset();}
+		mass(BALL_MASS) {
+		index = ballIndexCnt++; 
+		Reset();
+	}
 	
 
 	void Reset(void);
@@ -76,41 +82,38 @@ public:
 };
 
 
-/*
-class particle 
-{
-public:
-	vec3 position;
-	vec3 velocity;
+/*-----------------------------------------------------------
+  team class...commented out because it caused an 'exit':redefinition; 'noreturn' differs error
+  -----------------------------------------------------------*/
+//class team {
+//private:
+	//std::string name;
+	//int score;
+	//std::vector<int> playerScores;
 
-	particle() {position=0;velocity=0;}
-	void update(int ms);
-};
+//public:
+	//team(const std::string& teamName) : name(teamName), score(0) {}
 
-class particleSet 
-{
-public:
-	particle *particles[MAX_PARTICLES];
-	int num;
+	//std::string getName() const {
+		//return name;
+	//}
 
-	particleSet()
-	{
-		for(int i=0;i<MAX_PARTICLES;i++) particles[i] = 0;
-		num=0;
-	}
+	//int getScore() const {
+		//return score;
+	//}
 
-	~particleSet()
-	{
-		for(int i=0;i<MAX_PARTICLES;i++)
-		{
-			if(particles[i]) delete particles[i];
-		}
-	}
+	//void updateScore(int distance) { 
+		//score += distance;
+		//playerScores.push_back(distance);
+	//}
 
-	void AddParticle(const vec3 &pos);
-	void update(int ms);
-};
-*/
+	//void displayPlayerScores() const {
+		//std::cout << "Player scores for Team " << name << ":\n";
+		//for (int i = 0; i < playerScores.size(); i++) {
+			//std::cout << "Player " << (i + 1) << ": " << playerScores[i] << "\n";
+		//}
+	//}
+//};
 
 /*-----------------------------------------------------------
   table class
@@ -120,7 +123,7 @@ class table
 public:
 	ball balls[NUM_BALLS];	
 	cushion cushions[NUM_CUSHIONS];
-	// particleSet parts;
+	//team team;
 
 	void SetupCushions(void);
 	void Update(int ms);	
